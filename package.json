@@ -1,0 +1,20 @@
+{
+  "name": "xlj-utils",
+  "version": "0.0.0",
+  "description": "npm发包调试初始化",
+  "keywords": ["xlj", "utils","utils"],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "author": "皖熊",
+  "license": "ISC",
+  "files": ["dist"],
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  }
+}
