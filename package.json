@@ -4,7 +4,7 @@
   "description": "npm发包调试初始化",
   "keywords": [
     "xlj",
-    "utils",
+    "util",
     "utils"
   ],
   "main": "./dist/index.cjs.js",
