@@ -2,19 +2,38 @@
   "name": "xlj-utils",
   "version": "0.0.0",
   "description": "npm发包调试初始化",
-  "keywords": ["xlj", "utils","utils"],
-  "main": "index.js",
+  "keywords": [
+    "xlj",
+    "utils",
+    "utils"
+  ],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"
+    "dev": "rollup -w -c",
+    "build:types": "tsc -b ./tsconfig.json",
+    "build": "npm run clean && npm run build:types && rollup -c",
+    "clean": "rimraf ./dist",
+    "prepublish": "pnpm version && pnpm build"
   },
   "author": "皖熊",
   "license": "ISC",
-  "files": ["dist"],
-  "dependencies": {
-    
+  "publishConfig": {
+    "access": "public"
   },
-  "devDependencies": {
-    
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
   }
 }
