@@ -133,3 +133,21 @@ export function getBytes(str: string): number {
   }
   return bytes;
 }
+
+/**
+ * @description 求和（相加/相减）精度问题
+ * @date 2023-01-29
+ * @param arr:number[] 传入的值必须要是数字(+string)
+ * @returns number
+ */
+export const countSum: (arr: number[]) => number = (arr) => {
+  if (!arr.length) return 0;
+  arr = arr.map((v: number) => {
+    if (v && !Number.isNaN(Number(v))) return Math.round(v * 100);
+    return 0;
+  });
+  const result = arr.reduce((prev: number, curr: number) => {
+    return prev + curr
+  }, 0);
+  return result / 100;
+};
